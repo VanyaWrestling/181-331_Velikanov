@@ -76,6 +76,7 @@ ColumnLayout{
                     width: grid.cellWidth
 
                     Rectangle{
+                    id:rect2
                     color: "#57bfff"
                     anchors.fill: parent
     //                height: grid.cellHeight
@@ -83,6 +84,7 @@ ColumnLayout{
                     border.color: "#2baeff"
                     anchors.margins: 5
                     border.width: 2
+
                     radius: 10
                     ColumnLayout{
                             anchors.fill: parent
@@ -289,6 +291,7 @@ ColumnLayout{
                 Layout.preferredHeight:  200
                 //Layout.leftMargin: 20
                  anchors.horizontalCenter: parent.horizontalCenter
+                 fillMode: Image.PreserveAspectFit
             }
             Text{
                 id:txtdr3
