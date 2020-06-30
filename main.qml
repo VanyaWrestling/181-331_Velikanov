@@ -9,7 +9,7 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 640
-    title: qsTr("Tabs")
+    title: qsTr("Exam")
 
     SwipeView {
         id: swipeView
@@ -24,16 +24,20 @@ ApplicationWindow {
                 background: Rectangle{
                     implicitHeight: 50
                     width: parent.width
-                    color: "#727cf5"
-                    Image{
+                    color: "#81D4FA"
+                    Button{
                         id:hmg4
-                        source: "qrc:/exam.png"
+                        icon.source: "qrc:/exam.png"
                         //anchors.right: txt4.left
                         anchors.rightMargin: 6
-                        width: 30
-                        height: 20
+                        width: 90
+                        height: 50
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
+                        flat: true
+                        //text: "="
+                        onClicked: dr1.open();
+                        Material.foreground: "black"
 
                     }
                     Text {
@@ -87,6 +91,7 @@ ColumnLayout{
 //                                border.color: "grey"
 //                                radius: 2
                             Label{ // заголовок
+                                id: txt_head
                                 color: "black"
                                 text: model_head
                                 Layout.fillHeight: true
@@ -96,6 +101,7 @@ ColumnLayout{
                             }
                            // }
                             Label{ // Описание
+                                id: txt_body
                                 color: "black"
                                 text: model_body
                                 Layout.fillHeight: true
@@ -144,18 +150,19 @@ ColumnLayout{
                 background: Rectangle{
                     implicitHeight: 50
                     width: parent.width
-                    color: "#727cf5"
+                    color: "#81D4FA"
                     Button{
                         id:hmg42
                         //source: "qrc:/exam.png"
                         //anchors.right: txt4.left
+                        icon.source: "qrc:/exam2.png"
                         anchors.rightMargin: 6
                         width: 70
                         height: 50
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         //icon.source:  "qrc:/exam2.png"
-                        text:"<-"
+                        //text:"<-"
                         flat:true
                         font.bold: true
                         Material.foreground: "black"
@@ -211,18 +218,21 @@ ColumnLayout{
                     id: txtedit
                     Layout.fillWidth: true
                     Layout.margins: 15
+                    font.pixelSize: 14
+                    font.bold: true
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    maximumLength: 255
 
                 }
                 Text{
                     id: txt22
                     text: "Текст Заметки"
-                    font.pixelSize: 20
+                    font.pixelSize: 18
                     Layout.leftMargin: 15
                 }
                 TextArea{
                     id:txtArea
-                    placeholderText: qsTr("Заметка")
+                    placeholderText: qsTr("Текст Заметки")
                     Layout.fillHeight: true
                     font.pixelSize: 14
                     Layout.margins: 15
@@ -262,24 +272,38 @@ ColumnLayout{
                 id:txtdr1
                 text: "Заметки"
                 font.pixelSize: 5 * Screen.pixelDensity
-                //anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                //Layout.leftMargin: 20
             }
             Text{
                id:txtdr2
-               text: "Экзамеционное задание"
-              // wrapMode: Text.WordWrap
-               //readOnly: true
+               text: "Великанов Иван\nстудент 2 курса\nгруппы 181-331"
+                anchors.horizontalCenter: parent.horizontalCenter
+              // Layout.leftMargin: 20
+               font.pixelSize: 20
             }
             Image{
                 id:imgdr1
+                source: "qrc:/exam3.jpg"
+                Layout.preferredWidth:  150
+                Layout.preferredHeight:  200
+                //Layout.leftMargin: 20
+                 anchors.horizontalCenter: parent.horizontalCenter
             }
             Text{
                 id:txtdr3
-                text: "Автор: "
+                text: "Автор:\nvanya.velikanov.21\n@yandex.ru"
+                font.pixelSize: 20
+                //Layout.leftMargin: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+
             }
             Text{
                 id: txtdr4
-                text: "Ссылка"
+                text: "https://github.com/VanyaWrestling/\n181-331_Velikanov"
+                font.pixelSize: 14
+                Layout.leftMargin: 10
+                // anchors.horizontalCenter: parent.horizontalCenter
             }
 
         }

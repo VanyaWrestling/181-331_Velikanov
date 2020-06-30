@@ -4,5 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>exam.png</file>
         <file>exam2.png</file>
+        <file>exam3.jpg</file>
     </qresource>
 </RCC>
